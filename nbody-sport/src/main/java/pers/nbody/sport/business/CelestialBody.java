@@ -1,4 +1,6 @@
-package pers.nbody.sport.util;
+package pers.nbody.sport.business;
+
+import pers.nbody.sport.util.Vector3;
 
 public class CelestialBody {
     private double mass;
@@ -12,6 +14,10 @@ public class CelestialBody {
         vel = null;
         k = new Vector3[4];
         l = new Vector3[4];
+        for (int i = 0; i < 4; i++) {
+            k[i] = new Vector3();
+            l[i] = new Vector3();
+        }
     }
 
     public CelestialBody(double mass, Vector3 pos, Vector3 vel) {
@@ -20,6 +26,10 @@ public class CelestialBody {
         this.vel = vel;
         k = new Vector3[4];
         l = new Vector3[4];
+        for (int i = 0; i < 4; i++) {
+            k[i] = new Vector3();
+            l[i] = new Vector3();
+        }
     }
 
     public void setCelestialBody(double mass, Vector3 pos, Vector3 vel) {

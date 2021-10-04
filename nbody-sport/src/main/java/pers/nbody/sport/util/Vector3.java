@@ -27,24 +27,28 @@ public class Vector3 {
         return Math.sqrt(x * x + y * y + z * z);
     }
 
-    public Vector3 add (Vector3 a, Vector3 b) {
+    static public Vector3 add (Vector3 a, Vector3 b) {
         return new Vector3(a.x + b.x, a.y + b.y, a.z + b.z);
     }
 
-    public Vector3 minus (Vector3 a, Vector3 b) {
+    static public Vector3 minus (Vector3 a, Vector3 b) {
         return new Vector3(a.x - b.x, a.y - b.y, a.z - b.z);
     }
 
-    public Vector3 time (Vector3 a, Vector3 b) {
+    static public Vector3 time (Vector3 a, Vector3 b) {
         return new Vector3(a.x * b.x, a.y * b.y, a.z * b.z);
     }
 
-    public Vector3 time (double a, Vector3 b) {
+    static public Vector3 time (double a, Vector3 b) {
         return new Vector3(a * b.x, a * b.y, a * b.z);
     }
 
-    public Vector3 time (Vector3 a, double b) {
+    static public Vector3 time (Vector3 a, double b) {
         return new Vector3(a.x * b, a.y * b, a.z * b);
+    }
+
+    static public Vector3 divide (Vector3 a, double b) {
+        return new Vector3(a.x / b, a.y / b, a.z / b);
     }
 
     public Vector3 add (Vector3 a) {
@@ -61,5 +65,9 @@ public class Vector3 {
 
     public Vector3 time (double a) {
         return new Vector3(a * x, a * y, a * z);
+    }
+
+    public Vector3 divide (double a) {
+        return new Vector3(x / a, y / a, z / a);
     }
 }
