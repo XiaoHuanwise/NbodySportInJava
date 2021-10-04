@@ -35,8 +35,8 @@ public class Vector3 {
         return new Vector3(a.x - b.x, a.y - b.y, a.z - b.z);
     }
 
-    static public Vector3 time (Vector3 a, Vector3 b) {
-        return new Vector3(a.x * b.x, a.y * b.y, a.z * b.z);
+    static public double time (Vector3 a, Vector3 b) {
+        return a.x * b.x + a.y * b.y + a.z * b.z;
     }
 
     static public Vector3 time (double a, Vector3 b) {
@@ -59,8 +59,8 @@ public class Vector3 {
         return new Vector3(x - a.x, y - a.y, z - a.z);
     }
 
-    public Vector3 time (Vector3 a) {
-        return new Vector3(x * a.x, y * a.y, z * a.z);
+    public double time (Vector3 a) {
+        return x * a.x + y * a.y + z * a.z;
     }
 
     public Vector3 time (double a) {
