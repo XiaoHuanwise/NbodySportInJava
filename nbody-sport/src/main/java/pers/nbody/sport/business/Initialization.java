@@ -18,17 +18,17 @@ public class Initialization {
                 cbody[i].setCelestialBody((random.nextInt(901) + 100) * G,
                         new Vector3((random.nextInt(2001) - 1000) * G, (random.nextInt(2001) - 1000) * G, (random.nextInt(2001) - 1000) * G),
                         new Vector3((random.nextInt(21) - 10) * G, (random.nextInt(21) - 10) * G, (random.nextInt(21) - 10) * G));
-                P = P.add(cbody[i].getVel().time(cbody[i].getMass()));
+                P = P.add(cbody[i].getVel().times(cbody[i].getMass()));
             }
             cbody[0].setCelestialBody((random.nextInt(901) + 100) * G,
                     new Vector3((random.nextInt(2001) - 1000) * G, (random.nextInt(2001) - 1000) * G, (random.nextInt(2001) - 1000) * G),
                     new Vector3());
             cbody[0].setVel(P.divide(-1.0 * cbody[0].getMass()));
             for (var i:cbody) {
-                double e = Vector3.time(i.getVel(), i.getVel()) * (0.5 * i.getMass());
+                double e = Vector3.times(i.getVel(), i.getVel()) * (0.5 * i.getMass());
                 for (var j:cbody) {
                     if (i.equals(j)) continue;
-                    e += -1.0 * G * i.getMass() * j.getMass() / Vector3.minus(j.getPos(), i.getPos()).mod();
+                    e += -1.0 * G * i.getMass() * j.getMass() / Vector3.sub(j.getPos(), i.getPos()).mod();
                 }
                 if (e >= -10000.0) {
                     E = 0;
